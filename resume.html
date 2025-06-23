@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel - Executive Resume | Full Stack Developer & AI Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary-color: #0891b2;
+            --accent-color: #7c3aed;
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-professional: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #581c87 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.3);
+            --shadow-professional: 0 32px 64px -12px rgba(0, 0, 0, 0.25);
+            --font-primary: 'Inter', sans-serif;
+            --font-display: 'Playfair Display', serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --border-radius: 0.75rem;
+            --border-radius-lg: 1rem;
+            --border-radius-xl: 1.5rem;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .resume-wrapper {
+            position: relative;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .resume-wrapper::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-professional);
+            overflow: hidden;
+            position: relative;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-professional);
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(37, 99, 235, 0.1), rgba(139, 92, 246, 0.1));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-shape:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .resume-header {
+            background: var(--gradient-professional);
+            color: white;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff10" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>'),
+                radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-image-container {
+            position: relative;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 47%;
+            background: var(--gradient-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: rotate 4s linear infinite;
+        }
+
+        .profile-decorations {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .profile-ring {
+            position: absolute;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: rotate 8s linear infinite reverse;
+        }
+
+        .profile-ring:nth-child(1) {
+            width: 180px;
+            height: 180px;
+            top: -20px;
+            left: -20px;
+        }
+
+        .profile-ring:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: -30px;
+            left: -30px;
+            animation-duration: 12s;
+        }
+
+        .header-info {
+            text-align: left;
+        }
+
+        .resume-name {
+            font-size: 3.5rem;
+            font-weight: 900;
+            font-family: var(--font-display);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #ffffff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .resume-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        .resume-tagline {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-style: italic;
+            font-family: var(--font-display);
+        }
+
+        .header-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: var(--font-mono);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .resume-contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 1rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .resume-body {
+            padding: 3rem 2rem;
+            background: var(--bg-primary);
+        }
+
+        .resume-section {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .resume-section::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-professional);
+            border-radius: 2px;
+            opacity: 0.3;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-family: var(--font-display);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-professional);
+            border-radius: 2px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--primary-color), transparent);
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+            box-shadow: var(--shadow-md);
+        }
+
+        .summary::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            font-family: var(--font-display);
+            opacity: 0.3;
+        }
+
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-professional);
+            border-radius: 1px;
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -2.75rem;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: var(--gradient-professional);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+
+        .item-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: start;
+        }
+
+        .item-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+        }
+
+        .item-company {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .item-location {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .item-date {
+            background: var(--gradient-professional);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            font-family: var(--font-mono);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .item-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .item-achievements {
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .item-achievements li {
+            position: relative;
+            padding-left: 2rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .item-achievements li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 8px;
+            height: 8px;
+            background: var(--gradient-professional);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        .item-technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .tech-tag {
+            background: var(--gradient-professional);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--border-radius);
+            font-size: 0.8rem;
+            font-weight: 500;
+            font-family: var(--font-mono);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-professional);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .skill-category h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-display);
+        }
+
+        .skill-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-professional);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .skill-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .skill-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-percentage {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-family: var(--font-mono);
+        }
+
+        .skill-bar {
+            width: 60px;
+            height: 6px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--gradient-professional);
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .project-item {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .project-header {
+            background: var(--gradient-professional);
+            color: white;
+            padding: 1.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="%23ffffff20"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>');
+        }
+
+        .project-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-display);
+        }
+
+        .project-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-highlights {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-highlights li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .project-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-tech-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: var(--border-radius);
+            font-size: 0.8rem;
+            font-weight: 500;
+            font-family: var(--font-mono);
+        }
+
+        .education-item {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .education-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .certification-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-professional);
+        }
+
+        .certification-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .certification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .certification-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .certification-issuer {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .certification-badge {
+            background: var(--gradient-professional);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--border-radius);
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+
+        .action-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .action-btn {
+            background: var(--gradient-professional);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius-lg);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .language-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            transition: var(--transition);
+        }
+
+        .language-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .language-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .language-level {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .resume-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @media print {
+            .action-buttons, .floating-elements {
+                display: none;
+            }
+            
+            .resume-wrapper {
+                padding: 0;
+                background: white;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                max-width: none;
+                border-radius: 0;
+            }
+            
+            .resume-header {
+                background: var(--primary-color) !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .resume-section::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-wrapper {
+                padding: 1rem;
+            }
+            
+            .resume-header {
+                padding: 2rem 1rem;
+            }
+            
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            
+            .resume-name {
+                font-size: 2.5rem;
+            }
+            
+            .resume-contact {
+                grid-template-columns: 1fr;
+            }
+            
+            .resume-body {
+                padding: 2rem 1rem;
+            }
+            
+            .item-header {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .skills-grid, .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                position: relative;
+                top: auto;
+                right: auto;
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+            
+            .experience-timeline {
+                padding-left: 1rem;
+            }
+            
+            .experience-item::before {
+                left: -1.75rem;
+            }
+              .project-image {
+                width: 100%;
+                max-width: 100px;  /* Shrinks the image width */
+                max-height: 300px;
+                display: block;
+                margin: 0 auto;
+                border-radius: 12px;
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+              }
+              
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div>
+
+    <div class="action-buttons">
+        <button class="action-btn" onclick="window.print()">
+            <i class="fas fa-download"></i>
+            Download PDF
+        </button>
+        <button class="action-btn" onclick="window.close()">
+            <i class="fas fa-times"></i>
+            Close
+        </button>
+    </div>
+
+    <div class="resume-wrapper">
+        <div class="resume-container">
+            <header class="resume-header">
+                <div class="header-content">
+                    <div class="profile-image-container ">
+                     
+                            <img src="./assets/ChatGPT Image Jun 23, 2025, 10_56_47 AM.png" alt="My Drawing" class="profile-image" />
+                      
+                    </div>
+                    <div class="header-info">
+                        <h1 class="resume-name">Samuel</h1>
+                        <p class="resume-title">Senior Full Stack Developer & AI Specialist</p>
+                        <p class="resume-tagline">"Transforming Ideas into Intelligent Digital Solutions"</p>
+                    </div>
+                    <div class="header-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Years Exp</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Success</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resume-contact">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span>samuel.dev@hokudai.ac.jp</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <span>+81 (011) 706-2111</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span>Sapporo, Hokkaido, Japan</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <span>linkedin.com/in/samuel-hokudai</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <span>github.com/samuel-hokudai</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <span>samuel-portfolio.dev</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="resume-body">
+                <section class="resume-section">
+                    <h2 class="section-title">Executive Summary</h2>
+                    <div class="summary">
+                        Distinguished Full Stack Developer and AI Specialist with 6+ years of progressive experience architecting enterprise-grade solutions. 
+                        Hokkaido University Computer Science graduate with demonstrated expertise in PHP, Java, and cutting-edge AI technologies. 
+                        Proven track record of leading cross-functional teams, delivering mission-critical applications processing millions of transactions, 
+                        and driving digital transformation initiatives that resulted in 40% operational efficiency improvements and $2M+ cost savings. 
+                        Passionate about leveraging emerging technologies to solve complex business challenges and create scalable, intelligent systems.
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-title">Professional Experience</h2>
+                    
+                    <div class="experience-timeline">
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <h3 class="item-title">Senior Full Stack Developer & Tech Lead</h3>
+                                    <p class="item-company">Tech Innovation Corp</p>
+                                    <p class="item-location">Tokyo, Japan</p>
+                                </div>
+                                <div class="item-date">2022 - Present</div>
+                            </div>
+                            <p class="item-description">
+                                Leading a team of 8 developers in architecting and delivering AI-powered enterprise solutions. 
+                                Spearheading digital transformation initiatives and establishing technical excellence standards across the organization.
+                            </p>
+                            <ul class="item-achievements">
+                                <li>Architected and deployed AI-powered analytics platform processing 1M+ data points daily, resulting in 45% improvement in decision-making speed</li>
+                                <li>Led migration to microservices architecture using Java Spring Boot, reducing system downtime by 60% and improving scalability</li>
+                                <li>Implemented machine learning models for predictive analytics, achieving 92% accuracy in customer behavior forecasting</li>
+                                <li>Established DevOps practices and CI/CD pipelines, reducing deployment time from 4 hours to 15 minutes</li>
+                                <li>Mentored 12 junior developers and conducted technical training sessions, improving team productivity by 35%</li>
+                                <li>Collaborated with C-level executives on technology strategy, contributing to $2.5M funding round success</li>
+                            </ul>
+                            <div class="item-technologies">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">Kubernetes</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <h3 class="item-title">Full Stack Developer</h3>
+                                    <p class="item-company">Digital Solutions Ltd</p>
+                                    <p class="item-location">Osaka, Japan</p>
+                                </div>
+                                <div class="item-date">2020 - 2022</div>
+                            </div>
+                            <p class="item-description">
+                                Developed enterprise-level applications and implemented AI-driven features for data analysis and process automation. 
+                                Collaborated with product teams to deliver high-impact solutions for Fortune 500 clients.
+                            </p>
+                            <ul class="item-achievements">
+                                <li>Built comprehensive e-commerce platform handling 50,000+ daily transactions using PHP Laravel framework</li>
+                                <li>Developed intelligent chatbot system with NLP capabilities, reducing customer service costs by 30%</li>
+                                <li>Created RESTful APIs serving 100+ client applications with 99.9% uptime</li>
+                                <li>Optimized database performance through advanced indexing and query optimization, achieving 65% faster response times</li>
+                                <li>Implemented real-time analytics dashboard using React and D3.js, providing actionable insights to stakeholders</li>
+                                <li>Led code review processes and established coding standards, improving code quality metrics by 40%</li>
+                            </ul>
+                            <div class="item-technologies">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">scikit-learn</span>
+                                <span class="tech-tag">AWS</span>
+                            </div>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="item-header">
+                                <div>
+                                    <h3 class="item-title">Software Developer</h3>
+                                    <p class="item-company">StartUp Innovations</p>
+                                    <p class="item-location">Sapporo, Hokkaido</p>
+                                </div>
+                                <div class="item-date">2018 - 2020</div>
+                            </div>
+                            <p class="item-description">
+                                Built web applications from ground up and gained comprehensive experience in full software development lifecycle. 
+                                Contributed to rapid company growth from 5 to 50 employees.
+                            </p>
+                            <ul class="item-achievements">
+                                <li>Developed 20+ web applications using PHP and Java, serving 10,000+ active users</li>
+                                <li>Implemented responsive front-end interfaces with modern JavaScript frameworks, improving user engagement by 25%</li>
+                                <li>Participated in agile development processes and sprint planning, consistently delivering features on time</li>
+                                <li>Created comprehensive technical documentation and conducted knowledge transfer sessions</li>
+                                <li>Contributed to open-source projects and represented company at 3 major tech conferences</li>
+                            </ul>
+                            <div class="item-technologies">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div>
+                                <h3 class="item-title">Bachelor of Science in Computer Science</h3>
+                                <p class="item-company">Hokkaido University</p>
+                                <p class="item-location">Sapporo, Hokkaido, Japan</p>
+                            </div>
+                            <div class="item-date">2014 - 2018</div>
+                        </div>
+                        <p class="item-description">
+                            Comprehensive studies in computer science with specialization in software engineering and artificial intelligence. 
+                            Graduated Magna Cum Laude with research focus on machine learning applications in web development.
+                        </p>
+                        <ul class="item-achievements">
+                            <li><strong>GPA:</strong> 3.85/4.0 (Magna Cum Laude)</li>
+                            <li><strong>Thesis:</strong> "Optimizing Web Application Performance through Machine Learning-Driven Resource Allocation"</li>
+                            <li><strong>Relevant Coursework:</strong> Advanced Data Structures, Algorithm Design, Database Systems, Artificial Intelligence, Machine Learning, Software Engineering, Computer Networks</li>
+                            <li><strong>Academic Honors:</strong> Dean's List (6 semesters), Outstanding Student in Computer Science Award</li>
+                            <li><strong>Research Assistant:</strong> AI Lab - Contributed to 3 published papers on neural network optimization</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-title">Technical Expertise</h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>
+                                <div class="skill-icon">
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                Backend Development
+                            </h4>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <span class="skill-name">PHP</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">95%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Laravel</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">92%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 92%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Symfony</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">88%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 88%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">CodeIgniter</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">85%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>
+                                <div class="skill-icon">
+                                    <i class="fab fa-java"></i>
+                                </div>
+                                Enterprise Development
+                            </h4>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <span class="skill-name">Java</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">93%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 93%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Spring Boot</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">90%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Spring Framework</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">87%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 87%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Hibernate</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">84%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 84%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>
+                                <div class="skill-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                AI & Machine Learning
+                            </h4>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <span class="skill-name">Python</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">89%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 89%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">TensorFlow</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">85%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">PyTorch</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">82%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 82%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Scikit-learn</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">87%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 87%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>
+                                <div class="skill-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                Database & Storage
+                            </h4>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <span class="skill-name">MySQL</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">94%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 94%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">PostgreSQL</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">90%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">MongoDB</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">86%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 86%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Redis</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">88%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 88%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>
+                                <div class="skill-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                Cloud & DevOps
+                            </h4>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <span class="skill-name">AWS</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">91%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 91%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Docker</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">89%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 89%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Kubernetes</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">83%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 83%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Jenkins</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">86%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 86%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>
+                                <div class="skill-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                Frontend & UI
+                            </h4>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">92%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 92%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Vue.js</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">88%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 88%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">React</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">85%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">TypeScript</span>
+                                    <div class="skill-level">
+                                        <span class="skill-percentage">87%</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 87%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-title">Featured Projects</h2>
+                    
+                    <div class="projects-grid">
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-content">
+                                    <h3 class="project-title">AI-Powered Enterprise Analytics Platform</h3>
+                                    <p class="project-subtitle">Mission-Critical Business Intelligence Solution</p>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <p class="project-description">
+                                    Architected and developed a comprehensive analytics platform leveraging machine learning for predictive analysis, 
+                                    automated reporting, and intelligent data visualization. The system processes over 1 million data points daily 
+                                    and serves 500+ enterprise users across multiple time zones.
+                                </p>
+                                <ul class="project-highlights">
+                                    <li>Achieved 92% accuracy in predictive modeling for customer behavior analysis</li>
+                                    <li>Reduced report generation time from 4 hours to 15 minutes through optimization</li>
+                                    <li>Implemented real-time data streaming with Apache Kafka for instant insights</li>
+                                    <li>Built scalable microservices architecture handling 10,000+ concurrent users</li>
+                                    <li>Integrated with 15+ third-party APIs and data sources</li>
+                                </ul>
+                                <div class="project-tech">
+                                    <span class="project-tech-tag">Java</span>
+                                    <span class="project-tech-tag">Spring Boot</span>
+                                    <span class="project-tech-tag">Python</span>
+                                    <span class="project-tech-tag">TensorFlow</span>
+                                    <span class="project-tech-tag">PostgreSQL</span>
+                                    <span class="project-tech-tag">Apache Kafka</span>
+                                    <span class="project-tech-tag">Docker</span>
+                                    <span class="project-tech-tag">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-content">
+                                    <h3 class="project-title">Next-Generation E-Commerce Platform</h3>
+                                    <p class="project-subtitle">High-Performance Multi-Tenant Solution</p>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <p class="project-description">
+                                    Developed a comprehensive e-commerce platform with advanced inventory management, payment processing, 
+                                    and AI-powered recommendation engine. The platform supports multiple vendors and handles complex 
+                                    business logic for B2B and B2C transactions.
+                                </p>
+                                <ul class="project-highlights">
+                                    <li>Processing 50,000+ daily transactions with 99.9% uptime</li>
+                                    <li>AI recommendation engine increased sales conversion by 35%</li>
+                                    <li>Implemented advanced fraud detection reducing chargebacks by 60%</li>
+                                    <li>Built responsive PWA with offline capabilities</li>
+                                    <li>Integrated with 20+ payment gateways and shipping providers</li>
+                                </ul>
+                                <div class="project-tech">
+                                    <span class="project-tech-tag">PHP</span>
+                                    <span class="project-tech-tag">Laravel</span>
+                                    <span class="project-tech-tag">MySQL</span>
+                                    <span class="project-tech-tag">Redis</span>
+                                    <span class="project-tech-tag">Vue.js</span>
+                                    <span class="project-tech-tag">Elasticsearch</span>
+                                    <span class="project-tech-tag">AWS</span>
+                                    <span class="project-tech-tag">Stripe</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-item">
+                            <div class="project-header">
+                                <div class="project-content">
+                                    <h3 class="project-title">Intelligent Customer Service Automation</h3>
+                                    <p class="project-subtitle">NLP-Powered Conversational AI System</p>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <p class="project-description">
+                                    Built an advanced chatbot system with natural language processing capabilities, context awareness, 
+                                    and multi-language support. The system handles complex customer inquiries and integrates seamlessly 
+                                    with existing CRM and support systems.
+                                </p>
+                                <ul class="project-highlights">
+                                    <li>Handling 10,000+ conversations daily with 85% resolution rate</li>
+                                    <li>Reduced customer service costs by 40% while improving satisfaction scores</li>
+                                    <li>Implemented sentiment analysis for proactive issue escalation</li>
+                                    <li>Built custom NLP models with 90% intent recognition accuracy</li>
+                                    <li>Supports 12 languages with real-time translation capabilities</li>
+                                </ul>
+                                <div class="project-tech">
+                                    <span class="project-tech-tag">Python</span>
+                                    <span class="project-tech-tag">NLP</span>
+                                    <span class="project-tech-tag">Java</span>
+                                    <span class="project-tech-tag">Spring Boot</span>
+                                    <span class="project-tech-tag">MongoDB</span>
+                                    <span class="project-tech-tag">TensorFlow</span>
+                                    <span class="project-tech-tag">Kubernetes</span>
+                                    <span class="project-tech-tag">WebSocket</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-title">Professional Certifications</h2>
+                    
+                    <div class="certifications-grid">
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">AWS Certified Solutions Architect - Professional</div>
+                                    <div class="certification-issuer">Amazon Web Services</div>
+                                </div>
+                                <div class="certification-badge">2023</div>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">Oracle Certified Professional Java SE 17 Developer</div>
+                                    <div class="certification-issuer">Oracle Corporation</div>
+                                </div>
+                                <div class="certification-badge">2023</div>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">Google Cloud Professional Machine Learning Engineer</div>
+                                    <div class="certification-issuer">Google Cloud</div>
+                                </div>
+                                <div class="certification-badge">2022</div>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">Certified Kubernetes Administrator (CKA)</div>
+                                    <div class="certification-issuer">Cloud Native Computing Foundation</div>
+                                </div>
+                                <div class="certification-badge">2022</div>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">PHP Zend Certified Engineer</div>
+                                    <div class="certification-issuer">Zend Technologies</div>
+                                </div>
+                                <div class="certification-badge">2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">Machine Learning Specialization</div>
+                                    <div class="certification-issuer">Stanford University (Coursera)</div>
+                                </div>
+                                <div class="certification-badge">2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-title">Languages</h2>
+                    
+                    <div class="languages-grid">
+                        <div class="language-item">
+                            <div class="language-name">Japanese</div>
+                            <div class="language-level">Native</div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-name">English</div>
+                            <div class="language-level">Fluent (C2)</div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-name">Mandarin Chinese</div>
+                            <div class="language-level">Conversational (B2)</div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-name">Korean</div>
+                            <div class="language-level">Basic (A2)</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-title">Awards & Recognition</h2>
+                    
+                    <div class="certifications-grid">
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">Tech Innovation Award</div>
+                                    <div class="certification-issuer">Japan Software Engineering Association</div>
+                                </div>
+                                <div class="certification-badge">2023</div>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">Outstanding Developer of the Year</div>
+                                    <div class="certification-issuer">Tech Innovation Corp</div>
+                                </div>
+                                <div class="certification-badge">2022</div>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">Best AI Implementation</div>
+                                    <div class="certification-issuer">Digital Solutions Ltd</div>
+                                </div>
+                                <div class="certification-badge">2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="certification-item">
+                            <div class="certification-header">
+                                <div>
+                                    <div class="certification-name">Hokkaido University Excellence Award</div>
+                                    <div class="certification-issuer">Hokkaido University</div>
+                                </div>
+                                <div class="certification-badge">2018</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-title">Professional Memberships</h2>
